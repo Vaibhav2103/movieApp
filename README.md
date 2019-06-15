@@ -18,3 +18,4 @@ Run application using this command.
 ionic serve
 ```
 
+![Image of Yaktocat](https://octodex.github.com/images/yaktocat.png)
