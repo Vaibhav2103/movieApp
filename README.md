@@ -18,3 +18,4 @@ Run application using this command.
 ionic serve
 ```
 
+![Image of Yaktocat](https://raw.githubusercontent.com/Vaibhav2103/movieApp/master/resources/ios/splash/Default-667h.png)
