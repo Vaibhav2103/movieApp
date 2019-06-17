@@ -1,7 +1,8 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
-import { Observable } from "rxjs";
+import { Observable,of } from "rxjs";
 import { map } from "rxjs/operators";
+import { LoadingService } from "./loading.service";
 
 export enum SearchType {
   all = "",
@@ -17,14 +18,20 @@ export class MovieService {
   url = "http://www.omdbapi.com/";
   apiKey = "55b53009"; // <-- Enter your own key here!
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, public loading: LoadingService) {}
 
   searchData(title: string, type: SearchType): Observable<any> {
+    // this.loading.present();
     return this.http
       .get(
         `${this.url}?s=${encodeURI(title)}&type=${type}&apikey=${this.apiKey}`
       )
-      .pipe(map(results => results["Search"]));
+      .pipe(
+        map(results => {
+          // this.loading.dismiss();
+          return of(results["Search"]);
+        })
+      );
   }
 
   getDetails(id) {
