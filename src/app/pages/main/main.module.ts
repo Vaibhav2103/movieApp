@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
 
+import { TabsPageRoutingModule } from '../main/main-routing.module';
+
 import { IonicModule } from '@ionic/angular';
 
 import { MainPage } from './main.page';
@@ -19,7 +21,7 @@ const routes: Routes = [
     CommonModule,
     FormsModule,
     IonicModule,
-    RouterModule.forChild(routes)
+    TabsPageRoutingModule
   ],
   declarations: [MainPage]
 })
